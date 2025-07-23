@@ -9,6 +9,7 @@ git clone https://git.opencomputing.cn/yumoqing/rbac
 git clone https://git.opencomputing.cn/yumoqing/filemgr
 git clone https://git.opencomputing.cn/yumoqing/rag
 git clone https://git.opencomputing.cn/yumoqing/dapi
+git clone https://git.opencomputing.cn/yumoqing/kyrag
 cd kyrag
 cdir=$(pwd)
 uname=$(id -un)
@@ -54,11 +55,11 @@ exit 0
 EOF
 cat > $cdir/stop.sh <<EOF
 PORT=9182
-PID=$(lsof -t -i:$PORT)
+PID=\$(lsof -t -i:$PORT)
 
-if [ -n "$PID" ]; then
-    echo "找到端口 $PORT 的进程: PID=$PID"
-    kill -9 $PID
+if [ -n "\$PID" ]; then
+    echo "找到端口 $PORT 的进程: PID=\$PID"
+    kill -9 \$PID
     echo "已终止端口 $PORT 的进程"
 else
     echo "未找到端口 $PORT 的进程"
