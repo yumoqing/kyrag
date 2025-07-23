@@ -4,6 +4,7 @@ from appbase.init import load_appbase
 from rbac.init import load_rbac
 from filemgr.init import load_filemgr
 from rag.init import load_rag
+from dapi.init import load_dapi
 
 def init():
 	load_appbase()
