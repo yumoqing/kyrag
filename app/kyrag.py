@@ -11,6 +11,7 @@ def init():
 	load_rbac()
 	load_filemgr()
 	load_rag()
+	load_dapi()
 
 if __name__ == "__main__":
 	webapp(init)
