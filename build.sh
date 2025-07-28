@@ -6,17 +6,17 @@ uname=$(id -un)
 gname=$(id -gn)
 python3 -m venv py3
 source py3/bin/activate
-pip install -r requirements.txt
+$cdir/py3/bin/pip install -r requirements.txt
 mkdir pkgs
 cd pkgs
 dir=$(pwd)
-for m in appbase rbac filemgr rag dapi
+for m in appbase rbac filemgr rag dapi uapi
 do
 	echo "install $m module..."
 	cd $dir
 	git clone https://git.opencomputing.cn/yumoqing/$m
 	cd $dir/$m
-	pip install .
+	$cdir/py3/bin/pip install .
 	cd $dir/$m/models
 	xls2ddl mysql . > mysql.ddl.sql
 	mysql -h db -utest -ptest123 kyrag < mysql.ddl.sql
@@ -34,7 +34,7 @@ Wants=systemd-networkd.service
 User=$uname
 Group=$gname
 Type=forking
-WorkingDirectory=$cdur
+WorkingDirectory=$cdir
 ExecStart=$cdir/start.sh
 ExecStop=$cdir/stop.sh
 StandardOutput=append:/var/log/kyrag/kyrag.log
