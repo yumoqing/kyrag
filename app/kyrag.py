@@ -7,12 +7,15 @@ from rag.init import load_rag
 from dapi.init import load_dapi
 from bricks_for_python.init import load_pybricks
 
+async def get_owner_orgid():
+	return '0'
 def get_module_dbname(m):
 	return 'kyrag'
 
 def init():
 	env = ServerEnv()
 	env.get_module_dbname = get_module_dbname
+	env,get_owner_orgid = get_owner_orgid
 	load_appbase()
 	load_rbac()
 	load_filemgr()
