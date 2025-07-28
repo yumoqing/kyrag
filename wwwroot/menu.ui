@@ -19,6 +19,27 @@
 				"name":"config",
 				"label":"配置",
 				"items":[
+					{
+						"name":"organ",
+						"label":"机构",
+						"url":"{{entire_url('rbac/organization')}}"
+					},
+					{
+						"name":"codes",
+						"label":"编码",
+						"url":"{{entire_url('appbase/appcodes')}}",
+					},
+					{
+						"name":"param",
+						"label":"参数",
+						"url":"{{entire_url('appbase/params')}}"
+					}
+				]
+			},
+			{
+				"name":"config",
+				"label":"配置",
+				"items":[
 				]
 			},
 			{
