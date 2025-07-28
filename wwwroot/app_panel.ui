@@ -10,7 +10,7 @@
 				"height":"100%",
 				"tip":"进入主菜单",
 				"css":"clickable",
-				"url":"{{entire_url('/imgs/opencomputing-1.png')}}"
+				"url":"{{entire_url('/imgs/rag.svg')}}"
 			},
 			"binds":[
 				{
