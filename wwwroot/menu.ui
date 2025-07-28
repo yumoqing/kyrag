@@ -27,7 +27,7 @@
 					{
 						"name":"codes",
 						"label":"编码",
-						"url":"{{entire_url('appbase/appcodes')}}",
+						"url":"{{entire_url('appbase/appcodes')}}"
 					},
 					{
 						"name":"param",
