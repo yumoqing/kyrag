@@ -3,6 +3,11 @@
 	"widgettype":"Menu",
 	"options":{
 		"target":"PopupWindow",
+		"popup_options":{
+			"archor":"cc",
+			"width":"70%",
+			"height":"70%"
+		},
 		"cwidth":10,
 		"items":[
 			{
