@@ -1,28 +1,26 @@
 #!/usr/bin/env bash
 # clone from git@git.opencomputing.cn/yumoqing/kyrag
 # git clone https://git.opencomputing.cn/yumoqing/kyrag
-cd ..
-dir=$(pwd)
-git clone https://git.opencomputing.cn/yumoqing/appbase
-git clone https://git.opencomputing.cn/yumoqing/rbac
-git clone https://git.opencomputing.cn/yumoqing/filemgr
-git clone https://git.opencomputing.cn/yumoqing/rag
-git clone https://git.opencomputing.cn/yumoqing/dapi
-cd kyrag
 cdir=$(pwd)
 uname=$(id -un)
 gname=$(id -gn)
 python3 -m venv py3
 source py3/bin/activate
 pip install -r requirements.txt
+mkdir pkgs
+cd pkgs
+dir=$(pwd)
 for m in appbase rbac filemgr rag dapi
 do
+	echo "install $m module..."
+	cd $dir
+	git clone https://git.opencomputing.cn/yumoqing/$m
 	cd $dir/$m
 	pip install .
-	cd models
+	cd $dir/$m/models
 	xls2ddl mysql . > mysql.ddl.sql
 	mysql -h db -utest -ptest123 kyrag < mysql.ddl.sql
-	cd ../json
+	cd $dir/$m/json
 	./build
 	ln -s $dir/$m/wwwroot $cdir/wwwroot/$m
 done
