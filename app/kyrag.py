@@ -5,6 +5,7 @@ from rbac.init import load_rbac
 from filemgr.init import load_filemgr
 from rag.init import load_rag
 from dapi.init import load_dapi
+from uapi.init import load_uapi
 from bricks_for_python.init import load_pybricks
 
 async def get_owner_orgid():
@@ -21,6 +22,7 @@ def init():
 	load_filemgr()
 	load_rag()
 	load_dapi()
+	load_uapi()
 	load_pybricks()
 
 if __name__ == "__main__":
