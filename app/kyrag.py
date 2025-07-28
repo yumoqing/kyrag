@@ -15,7 +15,7 @@ def get_module_dbname(m):
 def init():
 	env = ServerEnv()
 	env.get_module_dbname = get_module_dbname
-	env,get_owner_orgid = get_owner_orgid
+	env.get_owner_orgid = get_owner_orgid
 	load_appbase()
 	load_rbac()
 	load_filemgr()
