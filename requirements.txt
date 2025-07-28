@@ -1,3 +1,4 @@
 git+https://git.opencomputing.cn/yumoqing/apppublic
 git+https://git.opencomputing.cn/yumoqing/sqlor
 git+https://git.opencomputing.cn/yumoqing/ahserver
+git+https://git.opencomputing.cn/yumoqing/bricks_for_python
