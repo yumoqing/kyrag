@@ -21,7 +21,7 @@ do
 	xls2ddl mysql . > mysql.ddl.sql
 	mysql -h db -utest -ptest123 kyrag < mysql.ddl.sql
 	cd $dir/$m/json
-	./build
+	./build.sh
 	ln -s $dir/$m/wwwroot $cdir/wwwroot/$m
 done
 ln -s /d/public/bricks $cdir/wwwroot
