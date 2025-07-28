@@ -11,11 +11,6 @@
 		"cwidth":10,
 		"items":[
 			{
-				"name":"home",
-				"label":"主页",
-				"url":"{{entire_url('public')}}"
-			},
-			{
 				"name":"config",
 				"label":"配置",
 				"items":[
@@ -35,6 +30,27 @@
 						"url":"{{entire_url('appbase/params')}}"
 					}
 				]
+			},
+			{
+				"nmae":"上位应用",
+				"label":"upapp",
+				"items":[
+					{
+						"name":"uapi",
+						"label":"接口",
+						"url":"{{entire_url('uapi/uapi')}}"
+					},
+					{
+						"name":"upapp",
+						"label":"应用",
+						"url":"{{entire_url('uapi/upapp')}}"
+					}
+				]
+			},
+			{
+				"nmae":"下位应用",
+				"label":"downapp",
+				"url":"{{entire_url('dapi/downapp')}}"
 			},
 			{
 				"name":"config",
