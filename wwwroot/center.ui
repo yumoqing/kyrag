@@ -1,6 +1,7 @@
 {
-	"widgettype":"VBox",
+	"widgettype":"MdWidget",
 	"options":{
+		"md_url":"{{entire_url('kyrag.md')}}",
 		"height":"100%"
 	}
 }
