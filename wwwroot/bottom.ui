@@ -1,0 +1,17 @@
+{
+	"widgettype":"HBox",
+	"options":{
+		"cheight":2,
+		"bgcolor":"#e5e5e5"
+	},
+	"subwidgets":[
+		{
+			"widgettype":"Text",
+			"options":{
+				"otext":"© 2024 版权所有, 开元云（北京）科技有限公司",
+				"i18n":true,
+				"wrap":true
+			}
+		}
+	]
+}

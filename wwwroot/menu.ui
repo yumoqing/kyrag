@@ -1,0 +1,283 @@
+{% set roles = get_user_roles(get_user()) %}
+{
+	"widgettype":"Menu",
+	"options":{
+		"target":"PopupWindow",
+		"cwidth":10,
+		"items":[
+			{
+				"name":"home",
+				"label":"主页",
+				"url":"{{entire_url('public')}}"
+			},
+			{
+				"name":"user",
+				"label":"用户",
+				"items":[
+{% if get_user() is None %}
+					{
+						"label": "登录",
+						"url":"{{entire_url('/rbac/user/login.ui')}},
+						"name":"login",
+						"tip":"点击登录",
+						"icon":"{{entire_url('/bricks/imgs/login.svg')}}"
+					},
+					{
+						"name":"register",
+						"label":"注册",
+						"url":"{{entire_url('/rbac/user/register.ui')}}",
+						"tip":"点击注册",
+						"icon":"{{entire_url('/bricks/imgs/register.svg')}}"
+					}
+{% else %}
+					{
+						"label":"用户功能",
+						"url":"{{entire_url('/rbac/user/user_menu.ui')}}",
+						"name":"userfunc",
+						"tip":"登录用户功能"
+					}
+{% endif %}
+				]
+			}
+			{
+				"name":"config",
+				"label":"配置",
+				"items":[
+				]
+			},
+			{
+				"name":"kdb",
+				"label":"知识库",
+				"items":[
+				]
+			},
+			{
+				"name“:"craw",
+				"label":"知识获取",
+				"items":[
+				]
+			}
+		]
+	}
+}
+{% if 'customer.customer' in roles %}
+			,
+			{
+                "name":"kdb",
+                "label":"知识库管理",
+                "items":[
+                    {
+                        "name": "mykdb",
+                        "icon": "{{entire_url('/imgs/kdb.svg')}}",
+                        "label":"我的知识库",
+                        "url": "{{entire_url('kdb/kdb')}}"
+                    },
+                    {
+                        "name": "folder",
+                        "icon": "{{entire_url('/imgs/folder.svg')}}",
+                        "label":"文件管理",
+                        "url": "{{entire_url('kdb/folderinfo')}}"
+                    },
+                    {
+                        "name": "crawling",
+                        "icon": "{{entire_url('/imgs/crawling.svg')}}",
+                        "label":"爬取管理",
+                        "url": "{{entire_url('kdb/crawling_schedule')}}"
+                    },
+                    {
+                        "name": "urlorigin",
+                        "icon": "{{entire_url('/imgs/urlorigin.svg')}}",
+                        "label":"网上知识源",
+                        "url": "{{entire_url('kdb/urlorigin')}}"
+                    }
+                ]
+            },
+			{
+				"name":"customize",
+				"label":"开源模型私有化",
+				"url":"{{entire_url('customize/requirements.ui')}}"
+			}
+{% endif %}
+{% if 'owner.superuser' in roles %}
+			,
+			{
+				"name":"sysmgr",
+				"label":"系统管理",
+				"items":{% include '/appbase/menu.ui' %}
+			},
+			{
+				"name":"addadmin",
+				"label":"添加管理员",
+				"url":"{{entire_url('rbac/add_adminuser.ui')}}"
+			},
+			{
+				"name":"role",
+				"label":"配置账务",
+				"items":[{
+					"name":"subject",
+					"label":"科目配置",
+					"url":"{{entire_url('accounting/subject')}}"
+				},{
+					"name":"account_config",
+					"label":"参与方科目配置",
+					"url":"{{entire_url('accounting/account_config')}}"
+				},{
+					"name":"accounting_config",
+					"label":"会计分录配置",
+					"url":"{{entire_url('accounting/accounting_config')}}"
+				},{
+					"name":"open_account",
+					"label":"开帐",
+					"url":"{{entire_url('accounting/open_account.ui')}}"
+				}]
+			},
+			{
+				"name":"role",
+				"label":"角色管理",
+				"url":"{{entire_url('rbac/role')}}"
+			},
+			{
+				"name":"permission",
+				"label":"权限管理",
+				"url":"{{entire_url('rbac/permission')}}"
+			}
+{% endif %}
+{% if 'reseller.operator' in roles or 'customer.operator' in roles or 'owner.operator' in roles %}
+			,{
+				"name": "msp",
+				"label": "服务管理",
+				"items":[
+					{
+						"name":"devgroup",
+						"label":"设备组",
+						"url":"{{entire_url('msp/devgroup')}}"
+					},
+					{
+						"name":"service",
+						"label":"服务目录",
+						"url":"{{entire_url('msp/mspcatelog')}}"
+					}
+				]
+			}
+			,{
+				"name": "upappconfig",
+				"label": "统一API",
+				"items":[
+					{
+						"name":"apiset",
+						"label":"接口集",
+						"url":"{{entire_url('uapi/uapiset')}}"
+					},
+					{
+						"name":"upapp",
+						"label":"上位系统",
+						"url":"{{entire_url('uapi/upapp')}}"
+					}
+				]
+			}
+{% endif %}
+{% if 'owner.operator' in roles %}
+			,{
+				"name":"prodtype",
+				"label":"产品类型管理",
+				"url":"{{entire_url('/platformbiz/prodtype')}}"
+			},
+			{
+				"name":"prodtypespec",
+				"label":"产品类型规格",
+				"url":"{{entire_url('/platformbiz/prodtypespec')}}"
+			}
+{% endif %}
+{% if 'provider.operator' in roles %}
+			,
+			{
+				"name":"product",
+				"label":"产品管理",
+				"url":"{{entire_url('/platformbiz/product')}}"
+			}
+            ,{   
+                "name":"reseller",
+                "label":"分销协议",
+                "url":"{{entire_url('/platformbiz/retail_agree')}}"
+            }   
+{% endif %}
+{% if 'reseller.operator' in roles or 'customer.operator' in roles %}
+			,
+			{
+				"name":"addprovider",
+				"label":"添加供应商",
+				"url":"{{entire_url('/platformbiz/add_provider.ui')}}"
+			},
+			{
+				"name":"providermgr",
+				"label":"供应协议",
+				"url":"{{entire_url('/platformbiz/provide_agree')}}"
+			},
+			{
+				"name":"product",
+				"label":"产品管理",
+				"url":"{{entire_url('/platformbiz/product')}}"
+			},
+			{
+				"name":"apikey",
+				"label":"apikey管理",
+				"url":"{{entire_url('/basellm/userapikey')}}"
+			},
+			{
+				"name":"api",
+				"label":"接口管理",
+				"url":"{{entire_url('/basellm/httpapi')}}"
+			},
+			{
+				"name":"models",
+				"label":"模型管理",
+				"items":[
+					{
+						"name":"model",
+						"label":"模型类型",
+						"url":"{{entire_url('/basellm/modeltype')}}"
+					},
+					{
+						"name":"model",
+						"label":"模型管理",
+						"url":"{{entire_url('/basellm/models')}}"
+					},
+					{
+						"name":"instance",
+						"label":"模型实例管理",
+						"url":"{{entire_url('/basellm/modelinstance')}}"
+					},
+					{
+						"name":"modelpricing",
+						"label":"模型定价",
+						"url":"{{entire_url('/basellm/modelpricing')}}"
+					}
+				]
+			}
+{% endif %}
+{% if 'reseller.accountant' in roles %}
+{% endif %}
+{% if 'reseller.sale' in roles %}
+            ,{   
+                "name":"reseller",
+                "label":"分销协议",
+                "url":"{{entire_url('/platformbiz/retail_agree')}}"
+            }   
+{% endif %}
+{% if 'custmer.admin' in roles %}
+			,{
+				"name":"users",
+				"label":"用户管理",
+				"url":"{{entire_url('/rbac/users')}}"
+			}
+{% endif %}
+{% if 'reseller.admin' in roles %}
+			,{
+				"name":"users",
+				"label":"用户管理",
+				"url":"{{entire_url('/rbac/users')}}"
+			}
+{% endif %}
+		]
+	}
+}

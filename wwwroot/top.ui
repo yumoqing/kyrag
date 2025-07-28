@@ -1,0 +1,42 @@
+{
+	"id":"top_panel",
+	"widgettype":"HBox",
+	"options":{
+		"bgcolor":"#444444",
+		"cheight":2.5,
+		"color":"#eeeeee"
+	},
+	"subwidgets":[
+		{
+			"widgettype":"urlwidget",
+			"options":{
+				"url":"{{entire_url('app_panel.ui')}}"
+			}
+		},
+		{
+			"widgettype":"Svg",
+			"options":{
+				"css": "clickable",
+				"topMargin": "10px",
+				"rate": 1.8,
+				"tip": "show all the closed window",
+				"url":"{{entire_url('/bricks/imgs/app-dock.svg')}}"
+			},
+			"binds":[
+				{
+					"wid": "self",
+					"event": "click",
+					"actiontype":"script",
+					"target":"app",
+					"script": "bricks.app.show_windows_panel(event)"
+				}
+			]
+		},
+		{
+			"widgettype":"urlwidget",
+			"options":{
+				"url":"{{entire_url('/rbac/user/user_panel.ui')}}"
+			}
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"widgettype":"VBox",
+	"options":{
+		"width":"100%",
+		"height":"100%",
+		"bgimage":"{{entire_url('/imgs/bgimage.jpg')}}"
+	},
+	"subwidgets":[
+		{
+			"widgettype":"urlwidget",
+			"options":{
+				"url":"{{entire_url('top.ui')}}"
+			}
+		},
+		{
+			"widgettype":"urlwidget",
+			"options":{
+				"url":"{{entire_url('center.ui')}}"
+			}
+		},
+		{
+			"widgettype":"urlwidget",
+			"options":{
+				"url":"{{entire_url('bottom.ui')}}"
+			}
+		}
+	]
+}
