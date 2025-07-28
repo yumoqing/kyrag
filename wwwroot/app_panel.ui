@@ -32,7 +32,7 @@
 			"widgettype":"Title4",
 			"options":{
 				"i18n":true,
-				"otext":"大模型应用平台",
+				"otext":"开元知识库平台",
 				"wrap":true,
 				"halign":"left"
 			}
