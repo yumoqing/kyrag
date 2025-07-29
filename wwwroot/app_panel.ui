@@ -10,7 +10,7 @@
 				"height":"100%",
 				"tip":"进入主菜单",
 				"css":"clickable",
-				"url":"{{entire_url('/imgs/rag.svg')}}"
+				"url":"{{entire_url('/imgs/kyrag.svg')}}"
 			},
 			"binds":[
 				{
