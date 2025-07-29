@@ -15,6 +15,16 @@
 				"label":"配置",
 				"items":[
 					{
+						"name":"services",
+						"label":"服务配置",
+						"url":"{{entire_url('rag/ragservices.json')}}"
+					},
+					{
+						"name":"service_options",
+						"label":"服务选择",
+						"url":"{{entire_url('rag/service_opts.json')}}"
+					},
+					{
 						"name":"organ",
 						"label":"机构",
 						"url":"{{entire_url('rbac/organization')}}"
@@ -32,8 +42,8 @@
 				]
 			},
 			{
-				"nmae":"上位应用",
-				"label":"upapp",
+				"label":"上位应用",
+				"name":"upapp",
 				"items":[
 					{
 						"name":"uapi",
@@ -48,15 +58,9 @@
 				]
 			},
 			{
-				"nmae":"下位应用",
-				"label":"downapp",
+				"label":"下位应用",
+				"name":"downapp",
 				"url":"{{entire_url('dapi/downapp')}}"
-			},
-			{
-				"name":"config",
-				"label":"配置",
-				"items":[
-				]
 			},
 			{
 				"name":"kdb",
