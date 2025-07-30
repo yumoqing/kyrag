@@ -64,21 +64,9 @@
 			},
 			{
 				"name":"kdb",
-				"label":"知识库",
-				"items":[
-                    {
-                        "name": "mykdb",
-                        "icon": "{{entire_url('/imgs/kdb.svg')}}",
-                        "label":"我的知识库",
-                        "url": "{{entire_url('rag/kdb')}}"
-                    },
-                    {
-                        "name": "folder",
-                        "icon": "{{entire_url('/imgs/folder.svg')}}",
-                        "label":"文件管理",
-                        "url": "{{entire_url('filemgr/folderinfo')}}"
-                    }
-				]
+				"label":"我的知识库",
+				"icon": "{{entire_url('/imgs/kdb.svg')}}",
+				"url": "{{entire_url('rag/kdb')}}"
 			},
 			{
 				"name":"craw",
