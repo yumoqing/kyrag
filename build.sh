@@ -52,7 +52,7 @@ exit 0
 EOF
 cat > $cdir/stop.sh <<EOF
 PORT=9182
-PID=\$(lsof -t -i:$PORT)
+PID=\$(lsof -t -i:\$PORT)
 
 if [ -n "\$PID" ]; then
     echo "找到端口 $PORT 的进程: PID=\$PID"
