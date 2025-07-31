@@ -22,8 +22,10 @@ do
 	mysql -h db -utest -ptest123 kyrag < mysql.ddl.sql
 	cd $dir/$m/json
 	./build.sh
+	rm $cdir/wwwroot/$m
 	ln -s $dir/$m/wwwroot $cdir/wwwroot/$m
 done
+rm $cdir/wwwroot/bricks
 ln -s /d/public/bricks $cdir/wwwroot
 cd $cdir
 cat > $cdir/kyrag.service <<EOF
