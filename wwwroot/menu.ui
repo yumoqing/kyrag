@@ -17,27 +17,27 @@
 					{
 						"name":"services",
 						"label":"服务配置",
-						"url":"{{entire_url('rag/ragservices')}}"
+						"url":"{{entire_url('/rag/ragservices')}}"
 					},
 					{
 						"name":"service_options",
 						"label":"服务选择",
-						"url":"{{entire_url('rag/service_opts')}}"
+						"url":"{{entire_url('/rag/service_opts')}}"
 					},
 					{
 						"name":"organ",
 						"label":"机构",
-						"url":"{{entire_url('rbac/organization')}}"
+						"url":"{{entire_url('/rbac/organization')}}"
 					},
 					{
 						"name":"codes",
 						"label":"编码",
-						"url":"{{entire_url('appbase/appcodes')}}"
+						"url":"{{entire_url('/appbase/appcodes')}}"
 					},
 					{
 						"name":"param",
 						"label":"参数",
-						"url":"{{entire_url('appbase/params')}}"
+						"url":"{{entire_url('/appbase/params')}}"
 					}
 				]
 			},
@@ -48,25 +48,25 @@
 					{
 						"name":"uapi",
 						"label":"接口",
-						"url":"{{entire_url('uapi/uapi')}}"
+						"url":"{{entire_url('/uapi/uapi')}}"
 					},
 					{
 						"name":"upapp",
 						"label":"应用",
-						"url":"{{entire_url('uapi/upapp')}}"
+						"url":"{{entire_url('/uapi/upapp')}}"
 					}
 				]
 			},
 			{
 				"label":"下位应用",
 				"name":"downapp",
-				"url":"{{entire_url('dapi/downapp')}}"
+				"url":"{{entire_url('/dapi/downapp')}}"
 			},
 			{
 				"name":"kdb",
 				"label":"我的知识库",
 				"icon": "{{entire_url('/imgs/kdb.svg')}}",
-				"url": "{{entire_url('rag/kdb')}}"
+				"url": "{{entire_url('/rag/kdb')}}"
 			},
 			{
 				"name":"craw",
@@ -76,13 +76,13 @@
                         "name": "urlorigin",
                         "icon": "{{entire_url('/imgs/urlorigin.svg')}}",
                         "label":"网上知识源",
-                        "url": "{{entire_url('kdb/urlorigin')}}"
+                        "url": "{{entire_url('/kdb/urlorigin')}}"
                     },
                     {
                         "name": "urlorigin",
                         "icon": "{{entire_url('/imgs/urlorigin.svg')}}",
                         "label":"爬取配置",
-                        "url": "{{entire_url('kdb/urlorigin')}}"
+                        "url": "{{entire_url('/kdb/urlorigin')}}"
                     }
 				]
 			}
