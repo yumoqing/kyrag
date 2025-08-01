@@ -46,9 +46,9 @@
 				"name":"upapp",
 				"items":[
 					{
-						"name":"uapi",
-						"label":"接口",
-						"url":"{{entire_url('/uapi/uapi')}}"
+						"name":"apiset",
+						"label":"接口集",
+						"url":"{{entire_url('/uapi/uapiset')}}"
 					},
 					{
 						"name":"upapp",
