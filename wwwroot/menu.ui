@@ -16,6 +16,16 @@
 				"items":[
 					{
 						"name":"services",
+						"label":"套餐管理",
+						"url":"{{entire_url('/rag/ragprogram')}}"
+					},
+					{
+						"name":"services",
+						"label":"套餐选择",
+						"url":"{{entire_url('/rag/programs.ui')}}"
+					},
+					{
+						"name":"services",
 						"label":"服务配置",
 						"url":"{{entire_url('/rag/ragservices')}}"
 					},
