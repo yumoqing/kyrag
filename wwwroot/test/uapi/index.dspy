@@ -1,0 +1,6 @@
+upappname = params_kw.upappid or 'jKrso1QCXS-rKzvjxR04f'
+apiname = params_kw.apiname or 'BAAI/bge-m3'
+uapi = UAPI(request, env=DictObject(**globals()))
+x = await uapi.call(upappid, apiname, user)
+return x
+
