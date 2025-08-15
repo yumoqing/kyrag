@@ -1,0 +1,7 @@
+debug(f'jump-in:{params_kw=}')
+deerer = params_kw.deerer
+if deerer is None:
+	return "error"
+userid = await deerer_user(deerer)
+return await redirect(entire_url('/'))
+
